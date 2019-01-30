@@ -1,0 +1,43 @@
+---
+title: "LA3.JasonGiblin"
+author: "Jason Giblin"
+date: "January 30, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is the Lab 3 assaignment for Team R4L.
+
+
+```{r, message=F, warning = FALSE}
+library(tidyverse)
+source("http://www.openintro.org/stat/data/cdc.R")
+cdc <- as_tibble(cdc)
+```
+
+```{r}
+ggplot(data=cdc)+
+  geom_point(mapping = aes(x = height, y = weight, col=smoke100))
+
+```
+The next chunk is a graph of exercise and smoking habits
+```{r}
+ggplot(cdc)+
+  geom_count(mapping = aes(x = exerany, y = smoke100))
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
